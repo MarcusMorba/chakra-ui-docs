@@ -35,7 +35,7 @@ function Example() {
   return (
     <>
       <p>Boolean state: {flag.toString()}</p>
-      <button onClick={setFlag.toggle}>
+      <button onmouseup={setFlag.toggle}>
         Click me to toggle the boolean value
       </button>
     </>
@@ -50,12 +50,11 @@ function Example() {
   const [flag, setFlag] = useBoolean()
 
   return (
-    <div onMouseEnter={setFlag.on} onMouseLeave={setFlag.off}>
-      {flag ? 'The flag is ON!' : 'Hover me to turn ON'}
-    </div>
+    <button onMouseEnter={setFlag.on} onMouseLeave={setFlag.off} onfocusin={setFlag.on} onfocusout={setFlag.off}>
+      {flag ? 'The flag is ON!' : 'Hover or focus me to turn ON'}
+    </button>
   )
 }
-```
 
 ## Parameters
 
